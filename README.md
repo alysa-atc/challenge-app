@@ -1,6 +1,6 @@
 # Monospacelabs challenge app 
 
-This project was created by Sofia Alysandratou as part of a coding challenge.
+This project was created by Sofia Alysandratou as part of a coding challenge. Fetching the users data are from an API created by monospacelabs, while the Status toggle is functional. The applications is created with React, Hooks and Redux. There is also Scss for styling.
 
 ![challenge-app](https://user-images.githubusercontent.com/74965633/111038496-f5fa0800-8431-11eb-8969-c32f77c941f7.png)
 
