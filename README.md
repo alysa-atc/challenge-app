@@ -2,6 +2,8 @@
 
 This project was created by Sofia Alysandratou as part of a coding challenge.
 
+![challenge-app](https://user-images.githubusercontent.com/74965633/111038496-f5fa0800-8431-11eb-8969-c32f77c941f7.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
