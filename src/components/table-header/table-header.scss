@@ -1,0 +1,14 @@
+@import '../../themes/colors';
+@import '../../themes/typography';
+
+.table-header {
+  label {
+    margin-left: 12px;
+    color: $body-color-base;
+    font-family: $body-font-family;
+    font-size: $title-font-size;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+}

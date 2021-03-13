@@ -1,0 +1,18 @@
+@import './themes/colors';
+@import './themes/typography';
+
+body {
+  font-family: $body-font-family;
+  color: $body-color-base;
+  font-size: $body-font-size;
+  font-weight: 400;
+  margin: 0;
+}
+
+.app {
+  margin: 5em;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+

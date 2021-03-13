@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-function App() {
+import TableHeader from './components/table-header/table-header.component'
+import UsersTable from './components/users-table/users-table.component'
+
+import Services from './services/users.services'
+import { setAllUsers, updateUser } from './redux/user/user.actions'
+
+import './App.scss'
+
+const App = () => {
+  const allUsers = useSelector(state => state.user.allUsers)
+
+  const dispatch = useDispatch()
+
+  const fetchAllUsers = useCallback(() => { 
+    return dispatch => {
+      Services.getAllUsers().then(res => {
+        dispatch(setAllUsers(res.data))
+      })
+    }
+  }, [])
+
+  const handleUpdateUser = id => {
+    let userUpdated = allUsers.find(user => user.id === id)
+    userUpdated.active = !userUpdated.active
+
+    Services.updateUser(id, userUpdated).then(() => {
+      dispatch(updateUser(userUpdated))
+    }) 
+  }
+
+  useEffect(() => {
+    dispatch(fetchAllUsers())
+  }, [dispatch, fetchAllUsers])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <TableHeader />
+      { allUsers ? (
+        <UsersTable
+          allUsers={allUsers}
+          handleUpdateUser={handleUpdateUser}
+        />
+        ) 
+        : <div>There are no users</div>
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

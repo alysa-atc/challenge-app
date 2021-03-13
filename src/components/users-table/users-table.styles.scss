@@ -1,0 +1,25 @@
+@import '../../themes/colors';
+@import '../../themes/typography';
+
+.users-table {
+  h3 {
+    color: $table-color;
+    font-family: $table-font-family;
+    font-size: $table-body-font-size;
+    font-weight: bold;
+    letter-spacing: 0;
+  }
+  .MuiTable-root {
+    table-layout: fixed;
+  }
+  .MuiTableCell-body {
+    color: $table-color;;
+  }
+  td.MuiTableCell-root.MuiTableCell-body {
+    color: $table-color;
+    font-family: $table-font-family;
+    font-size: $table-body-font-size;
+    letter-spacing: 0;
+  }
+}
+
